@@ -32,7 +32,7 @@ Aucune API HTTP n'est déployée. La latence d'une requête réelle comprendrait
 | Taille du modèle | 4,6 Ko | ≤ 10 Mo | conforme |
 | Surcoût mémoire (lot de 56 746) | 26 Mo | ≤ 200 Mo | conforme |
 
-Sur GitHub Actions, la même mesure donne une latence P95 de 3,50 ms, toujours très en dessous du budget.
+Sur GitHub Actions, la même mesure donne une latence P95 de 4,19 ms, toujours très en dessous du budget.
 
 La validation des entrées représente environ 35 % de la latence unitaire (1,25 ms au total contre 0,80 ms pour le modèle seul). Ce coût est faible au regard du budget de 50 ms. Le débit dépend beaucoup de la taille des lots, car les appels à pandas et à scikit-learn ont un coût fixe qui domine pour les petits lots. Pour une API qui traite les transactions une par une, la mesure utile est la latence unitaire, soit environ 800 transactions par seconde et par cœur. Avec 30 coefficients, la régression logistique est très légère, et le coût d'exécution n'est pas un facteur limitant.
 

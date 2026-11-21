@@ -102,7 +102,7 @@ En non-régression, le réentraînement à l'identique redonne exactement la ré
 
 | Mesure | Résultat | Critère |
 |---|---|---|
-| Latence P95, validation comprise | 1,43 ms (3,50 ms sur GitHub Actions) | ≤ 50 ms |
+| Latence P95, validation comprise | 1,43 ms (4,19 ms sur GitHub Actions) | ≤ 50 ms |
 | Débit, lots de 1 000 | 752 000 transactions/s | ≥ 1 000 |
 | Taille du modèle | 4,6 Ko | ≤ 10 Mo |
 | Surcoût mémoire | 26 Mo | ≤ 200 Mo |
