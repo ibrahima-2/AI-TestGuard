@@ -26,3 +26,7 @@ kaggle.json
 
 # Système
 .DS_Store
+
+# Rapport Word : conservé en local uniquement
+reports/*.docx
+~$*

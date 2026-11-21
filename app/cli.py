@@ -219,7 +219,7 @@ def cmd_train(args) -> dict:
         metrics = evaluate_model(y_te, (p_te >= cand["threshold"]).astype(int), p_te)
         test_results[name] = metrics
         curves[LABELS[name]] = (y_te.to_numpy(), p_te)
-        plot_confusion_matrix(metrics, f"{LABELS[name]} — test", figures / f"confusion_{name}.png")
+        plot_confusion_matrix(metrics, f"{LABELS[name]} (test)", figures / f"confusion_{name}.png")
 
     test_metrics = test_results[selected]
     acceptance = check_acceptance(test_metrics)
@@ -275,7 +275,7 @@ def cmd_train(args) -> dict:
     _print_table(
         rows, ["modèle", "accuracy", "precision", "recall", "f1", "fpr", "roc_auc", "pr_auc", "tp", "fp", "fn"]
     )
-    print(f"\nModèle retenu : {selected} — seuil {threshold:.6f} — accepté sur le test : {acceptance['accepted']}")
+    print(f"\nModèle retenu : {selected}, seuil {threshold:.6f}, accepté sur le test : {acceptance['accepted']}")
     return report
 
 
@@ -534,12 +534,12 @@ def cmd_regression(args) -> dict:
     base_config = baseline["model"]
     _, train, val, _, _ = prepare_splits(args.data, args.seed)
     variants = {
-        "v1.0.1 — réentraînement à l'identique (reproductibilité)": base_config,
-        "v1.1.0 — suppression de la variable Time": {
+        "v1.0.1 : réentraînement à l'identique": base_config,
+        "v1.1.0 : sans la variable Time": {
             **base_config,
             "features": [f for f in base_config["features"] if f != "Time"],
         },
-        "v1.1.1 — suppression de la pondération des classes": {
+        "v1.1.1 : sans pondération des classes": {
             **base_config,
             "params": {**base_config["params"], "class_weight": None},
         },

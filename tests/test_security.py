@@ -1,4 +1,4 @@
-"""Partie VIII — Sécurité opérationnelle : secrets, fichiers ignorés, journaux."""
+"""Partie VIII : sécurité opérationnelle (secrets, fichiers ignorés, journaux)."""
 
 from __future__ import annotations
 

@@ -37,10 +37,10 @@ jobs:
       - name: Installer les dépendances
         run: pip install -r requirements.txt
 
-      - name: Ruff — règles de style et de qualité
+      - name: Ruff : style et qualité
         run: ruff check --output-format=github .
 
-      - name: Ruff — formatage
+      - name: Ruff : formatage
         run: ruff format --check .
 
       - name: Pytest (hors tests lents) avec couverture

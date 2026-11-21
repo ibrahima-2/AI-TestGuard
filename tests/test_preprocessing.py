@@ -1,4 +1,4 @@
-"""Partie II — Tests unitaires des fonctions de chargement, validation et préparation."""
+"""Partie II : tests unitaires des fonctions de chargement, validation et préparation."""
 
 from __future__ import annotations
 

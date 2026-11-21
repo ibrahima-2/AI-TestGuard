@@ -1,4 +1,4 @@
-"""Partie VIII — Coût d'exécution (seuils volontairement larges pour rester stables en CI)."""
+"""Partie VIII : coût d'exécution (seuils volontairement larges pour rester stables en CI)."""
 
 from __future__ import annotations
 

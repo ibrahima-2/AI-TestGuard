@@ -1,4 +1,4 @@
-"""Partie IV — Tests d'intégration de bout en bout et prévention des fuites de données."""
+"""Partie IV : tests d'intégration de bout en bout et prévention des fuites de données."""
 
 from __future__ import annotations
 

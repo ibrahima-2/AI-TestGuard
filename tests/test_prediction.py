@@ -1,4 +1,4 @@
-"""Parties II et III — Tests de l'entraînement, du seuil, de la prédiction et des métriques."""
+"""Parties II et III : tests de l'entraînement, du seuil, de la prédiction et des métriques."""
 
 from __future__ import annotations
 

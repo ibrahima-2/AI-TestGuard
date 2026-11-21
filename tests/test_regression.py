@@ -1,4 +1,4 @@
-"""Partie VI — Validation hors échantillon et non-régression par rapport à une référence figée."""
+"""Partie VI : validation hors échantillon et non-régression par rapport à une référence figée."""
 
 from __future__ import annotations
 

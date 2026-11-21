@@ -1,4 +1,4 @@
-"""Partie V — Robustesse et sensibilité ; indicateurs de dérive (Partie X)."""
+"""Partie V : robustesse et sensibilité ; indicateurs de dérive (Partie X)."""
 
 from __future__ import annotations
 
