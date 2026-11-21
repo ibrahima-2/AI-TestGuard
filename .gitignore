@@ -1,0 +1,28 @@
+# Données : le jeu complet (144 Mo) ne doit pas être versionné
+data/*.csv
+!data/sample_*.csv
+
+# Modèles entraînés
+models/
+*.joblib
+*.pkl
+
+# Environnement Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Tests et couverture
+.pytest_cache/
+.hypothesis/
+.coverage
+coverage.xml
+htmlcov/
+.ruff_cache/
+
+# Secrets
+.env
+kaggle.json
+
+# Système
+.DS_Store

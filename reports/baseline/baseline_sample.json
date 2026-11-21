@@ -1,0 +1,75 @@
+{
+  "label": "référence",
+  "created_at": "2026-11-21T20:32:59+00:00",
+  "code_version": "non versionné",
+  "libraries": {
+    "app": "1.0.0",
+    "python": "3.13.5",
+    "numpy": "2.5.5",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0"
+  },
+  "seed": 42,
+  "model": {
+    "model_name": "logistic_regression",
+    "params": {
+      "C": 0.01
+    },
+    "features": [
+      "Time",
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V5",
+      "V6",
+      "V7",
+      "V8",
+      "V9",
+      "V10",
+      "V11",
+      "V12",
+      "V13",
+      "V14",
+      "V15",
+      "V16",
+      "V17",
+      "V18",
+      "V19",
+      "V20",
+      "V21",
+      "V22",
+      "V23",
+      "V24",
+      "V25",
+      "V26",
+      "V27",
+      "V28",
+      "Amount"
+    ],
+    "min_recall": 0.8
+  },
+  "threshold": 0.7655602499258148,
+  "metrics": {
+    "pr_auc": 0.9037508934446319,
+    "roc_auc": 0.9752777777777777,
+    "recall": 0.8333333333333334,
+    "precision": 1.0,
+    "fpr": 0.0,
+    "f1": 0.9090909090909091
+  },
+  "confusion": {
+    "tp": 25,
+    "fp": 0,
+    "fn": 5,
+    "tn": 600
+  },
+  "validation_set": {
+    "n_rows": 630,
+    "n_fraud": 30,
+    "fraud_rate": 0.047619047619047616,
+    "n_columns": 31,
+    "content_sha256": "e93d26d1d44bf545ff1a6a3357d85a11f7913b48a0c232aeb8b21e959d53ad25"
+  }
+}

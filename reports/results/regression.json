@@ -1,0 +1,458 @@
+{
+  "baseline": {
+    "label": "référence",
+    "created_at": "2026-11-21T20:32:57+00:00",
+    "code_version": "non versionné",
+    "libraries": {
+      "app": "1.0.0",
+      "python": "3.13.5",
+      "numpy": "2.5.5",
+      "pandas": "3.1.1",
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0"
+    },
+    "seed": 42,
+    "model": {
+      "model_name": "logistic_regression",
+      "params": {
+        "C": 0.01
+      },
+      "features": [
+        "Time",
+        "V1",
+        "V2",
+        "V3",
+        "V4",
+        "V5",
+        "V6",
+        "V7",
+        "V8",
+        "V9",
+        "V10",
+        "V11",
+        "V12",
+        "V13",
+        "V14",
+        "V15",
+        "V16",
+        "V17",
+        "V18",
+        "V19",
+        "V20",
+        "V21",
+        "V22",
+        "V23",
+        "V24",
+        "V25",
+        "V26",
+        "V27",
+        "V28",
+        "Amount"
+      ],
+      "min_recall": 0.8
+    },
+    "threshold": 0.9999921085656692,
+    "metrics": {
+      "pr_auc": 0.7905906093748996,
+      "roc_auc": 0.979743836562574,
+      "recall": 0.8191489361702128,
+      "precision": 0.8850574712643678,
+      "fpr": 0.00017651939065506346,
+      "f1": 0.850828729281768
+    },
+    "confusion": {
+      "tp": 77,
+      "fp": 10,
+      "fn": 17,
+      "tn": 56641
+    },
+    "validation_set": {
+      "n_rows": 56745,
+      "n_fraud": 94,
+      "fraud_rate": 0.0016565336152965019,
+      "n_columns": 31,
+      "content_sha256": "bfb802ecf536242a6d8737c1c775becdf2ee35e261ec2ac677721117b4eb42f2"
+    }
+  },
+  "candidates": [
+    {
+      "candidate": {
+        "label": "v1.0.1 — réentraînement à l'identique (reproductibilité)",
+        "created_at": "2026-11-21T20:38:41+00:00",
+        "code_version": "non versionné",
+        "libraries": {
+          "app": "1.0.0",
+          "python": "3.13.5",
+          "numpy": "2.5.5",
+          "pandas": "3.1.1",
+          "scikit-learn": "1.9.1",
+          "joblib": "1.6.0"
+        },
+        "seed": 42,
+        "model": {
+          "model_name": "logistic_regression",
+          "params": {
+            "C": 0.01
+          },
+          "features": [
+            "Time",
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount"
+          ],
+          "min_recall": 0.8
+        },
+        "threshold": 0.9999921085656692,
+        "metrics": {
+          "pr_auc": 0.7905906093748996,
+          "roc_auc": 0.979743836562574,
+          "recall": 0.8191489361702128,
+          "precision": 0.8850574712643678,
+          "fpr": 0.00017651939065506346,
+          "f1": 0.850828729281768
+        },
+        "confusion": {
+          "tp": 77,
+          "fp": 10,
+          "fn": 17,
+          "tn": 56641
+        },
+        "validation_set": {
+          "n_rows": 56745,
+          "n_fraud": 94,
+          "fraud_rate": 0.0016565336152965019,
+          "n_columns": 31,
+          "content_sha256": "bfb802ecf536242a6d8737c1c775becdf2ee35e261ec2ac677721117b4eb42f2"
+        }
+      },
+      "comparison": {
+        "decision": "accepter",
+        "metrics": [
+          {
+            "metric": "pr_auc",
+            "baseline": 0.7905906093748996,
+            "current": 0.7905906093748996,
+            "delta": 0.0,
+            "degradation": 0.0,
+            "status": "accepter"
+          },
+          {
+            "metric": "roc_auc",
+            "baseline": 0.979743836562574,
+            "current": 0.979743836562574,
+            "delta": 0.0,
+            "degradation": 0.0,
+            "status": "accepter"
+          },
+          {
+            "metric": "recall",
+            "baseline": 0.8191489361702128,
+            "current": 0.8191489361702128,
+            "delta": 0.0,
+            "degradation": 0.0,
+            "status": "accepter"
+          },
+          {
+            "metric": "precision",
+            "baseline": 0.8850574712643678,
+            "current": 0.8850574712643678,
+            "delta": 0.0,
+            "degradation": 0.0,
+            "status": "accepter"
+          },
+          {
+            "metric": "fpr",
+            "baseline": 0.00017651939065506346,
+            "current": 0.00017651939065506346,
+            "delta": 0.0,
+            "degradation": 0.0,
+            "status": "accepter"
+          }
+        ],
+        "notes": [],
+        "threshold_baseline": 0.9999921085656692,
+        "threshold_current": 0.9999921085656692
+      }
+    },
+    {
+      "candidate": {
+        "label": "v1.1.0 — suppression de la variable Time",
+        "created_at": "2026-11-21T20:38:41+00:00",
+        "code_version": "non versionné",
+        "libraries": {
+          "app": "1.0.0",
+          "python": "3.13.5",
+          "numpy": "2.5.5",
+          "pandas": "3.1.1",
+          "scikit-learn": "1.9.1",
+          "joblib": "1.6.0"
+        },
+        "seed": 42,
+        "model": {
+          "model_name": "logistic_regression",
+          "params": {
+            "C": 0.01
+          },
+          "features": [
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount"
+          ],
+          "min_recall": 0.8
+        },
+        "threshold": 0.999995958438745,
+        "metrics": {
+          "pr_auc": 0.7912200517461971,
+          "roc_auc": 0.9809175027238444,
+          "recall": 0.8085106382978723,
+          "precision": 0.8837209302325582,
+          "fpr": 0.00017651939065506346,
+          "f1": 0.8444444444444444
+        },
+        "confusion": {
+          "tp": 76,
+          "fp": 10,
+          "fn": 18,
+          "tn": 56641
+        },
+        "validation_set": {
+          "n_rows": 56745,
+          "n_fraud": 94,
+          "fraud_rate": 0.0016565336152965019,
+          "n_columns": 31,
+          "content_sha256": "bfb802ecf536242a6d8737c1c775becdf2ee35e261ec2ac677721117b4eb42f2"
+        }
+      },
+      "comparison": {
+        "decision": "accepter",
+        "metrics": [
+          {
+            "metric": "pr_auc",
+            "baseline": 0.7905906093748996,
+            "current": 0.7912200517461971,
+            "delta": 0.0006294423712975838,
+            "degradation": -0.0006294423712975838,
+            "status": "accepter"
+          },
+          {
+            "metric": "roc_auc",
+            "baseline": 0.979743836562574,
+            "current": 0.9809175027238444,
+            "delta": 0.001173666161270348,
+            "degradation": -0.001173666161270348,
+            "status": "accepter"
+          },
+          {
+            "metric": "recall",
+            "baseline": 0.8191489361702128,
+            "current": 0.8085106382978723,
+            "delta": -0.010638297872340496,
+            "degradation": 0.010638297872340496,
+            "status": "accepter"
+          },
+          {
+            "metric": "precision",
+            "baseline": 0.8850574712643678,
+            "current": 0.8837209302325582,
+            "delta": -0.0013365410318096904,
+            "degradation": 0.0013365410318096904,
+            "status": "accepter"
+          },
+          {
+            "metric": "fpr",
+            "baseline": 0.00017651939065506346,
+            "current": 0.00017651939065506346,
+            "delta": 0.0,
+            "degradation": 0.0,
+            "status": "accepter"
+          }
+        ],
+        "notes": [
+          "Configuration du modèle modifiée par rapport à la référence."
+        ],
+        "threshold_baseline": 0.9999921085656692,
+        "threshold_current": 0.999995958438745
+      }
+    },
+    {
+      "candidate": {
+        "label": "v1.1.1 — suppression de la pondération des classes",
+        "created_at": "2026-11-21T20:38:42+00:00",
+        "code_version": "non versionné",
+        "libraries": {
+          "app": "1.0.0",
+          "python": "3.13.5",
+          "numpy": "2.5.5",
+          "pandas": "3.1.1",
+          "scikit-learn": "1.9.1",
+          "joblib": "1.6.0"
+        },
+        "seed": 42,
+        "model": {
+          "model_name": "logistic_regression",
+          "params": {
+            "C": 0.01,
+            "class_weight": null
+          },
+          "features": [
+            "Time",
+            "V1",
+            "V2",
+            "V3",
+            "V4",
+            "V5",
+            "V6",
+            "V7",
+            "V8",
+            "V9",
+            "V10",
+            "V11",
+            "V12",
+            "V13",
+            "V14",
+            "V15",
+            "V16",
+            "V17",
+            "V18",
+            "V19",
+            "V20",
+            "V21",
+            "V22",
+            "V23",
+            "V24",
+            "V25",
+            "V26",
+            "V27",
+            "V28",
+            "Amount"
+          ],
+          "min_recall": 0.8
+        },
+        "threshold": 0.09211277690023341,
+        "metrics": {
+          "pr_auc": 0.7949110815504745,
+          "roc_auc": 0.9787500699505032,
+          "recall": 0.8191489361702128,
+          "precision": 0.7777777777777778,
+          "fpr": 0.0003883426594411396,
+          "f1": 0.7979274611398963
+        },
+        "confusion": {
+          "tp": 77,
+          "fp": 22,
+          "fn": 17,
+          "tn": 56629
+        },
+        "validation_set": {
+          "n_rows": 56745,
+          "n_fraud": 94,
+          "fraud_rate": 0.0016565336152965019,
+          "n_columns": 31,
+          "content_sha256": "bfb802ecf536242a6d8737c1c775becdf2ee35e261ec2ac677721117b4eb42f2"
+        }
+      },
+      "comparison": {
+        "decision": "rejeter",
+        "metrics": [
+          {
+            "metric": "pr_auc",
+            "baseline": 0.7905906093748996,
+            "current": 0.7949110815504745,
+            "delta": 0.004320472175574963,
+            "degradation": -0.004320472175574963,
+            "status": "accepter"
+          },
+          {
+            "metric": "roc_auc",
+            "baseline": 0.979743836562574,
+            "current": 0.9787500699505032,
+            "delta": -0.0009937666120708455,
+            "degradation": 0.0009937666120708455,
+            "status": "accepter"
+          },
+          {
+            "metric": "recall",
+            "baseline": 0.8191489361702128,
+            "current": 0.8191489361702128,
+            "delta": 0.0,
+            "degradation": 0.0,
+            "status": "accepter"
+          },
+          {
+            "metric": "precision",
+            "baseline": 0.8850574712643678,
+            "current": 0.7777777777777778,
+            "delta": -0.10727969348659006,
+            "degradation": 0.10727969348659006,
+            "status": "rejeter"
+          },
+          {
+            "metric": "fpr",
+            "baseline": 0.00017651939065506346,
+            "current": 0.0003883426594411396,
+            "delta": 0.00021182326878607617,
+            "degradation": 0.00021182326878607617,
+            "status": "accepter"
+          }
+        ],
+        "notes": [
+          "Configuration du modèle modifiée par rapport à la référence."
+        ],
+        "threshold_baseline": 0.9999921085656692,
+        "threshold_current": 0.09211277690023341
+      }
+    }
+  ]
+}

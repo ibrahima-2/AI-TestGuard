@@ -1,0 +1,300 @@
+{
+  "reference": "jeu d'entraînement",
+  "expected_alert_rate_validation": 0.0015331747290510177,
+  "batches": [
+    {
+      "batch": "Jeu de test (même distribution)",
+      "n": 56746,
+      "n_alert": 0,
+      "n_warning": 0,
+      "top_features": [
+        {
+          "feature": "V25",
+          "psi": 0.0005028740869652927,
+          "ks_statistic": 0.004424897077560552,
+          "ks_pvalue": 0.37415394163251825,
+          "status": "stable"
+        },
+        {
+          "feature": "V23",
+          "psi": 0.0004890401307835447,
+          "ks_statistic": 0.006988309176573698,
+          "ks_pvalue": 0.031166820908616666,
+          "status": "stable"
+        },
+        {
+          "feature": "V3",
+          "psi": 0.0003714446241826871,
+          "ks_statistic": 0.0042023841954151875,
+          "ks_pvalue": 0.4387595233793118,
+          "status": "stable"
+        },
+        {
+          "feature": "V12",
+          "psi": 0.0003568562001373519,
+          "ks_statistic": 0.004245093550157425,
+          "ks_pvalue": 0.42589101917719074,
+          "status": "stable"
+        },
+        {
+          "feature": "V28",
+          "psi": 0.00031281783441756825,
+          "ks_statistic": 0.006544717136644063,
+          "ks_pvalue": 0.05196754180190555,
+          "status": "stable"
+        }
+      ],
+      "alert_rate": {
+        "observed_rate": 0.0014097909984844747,
+        "expected_rate": 0.0015331747290510177,
+        "ratio": 0.9195240253908221,
+        "status": "normal"
+      }
+    },
+    {
+      "batch": "Transactions du jour 1",
+      "n": 144236,
+      "n_alert": 4,
+      "n_warning": 1,
+      "top_features": [
+        {
+          "feature": "Time",
+          "psi": 5.1089572186319305,
+          "ks_statistic": 0.49298910329838164,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V1",
+          "psi": 2.209846614607491,
+          "ks_statistic": 0.20775665492718565,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V3",
+          "psi": 0.4042603833009431,
+          "ks_statistic": 0.25563320855708216,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V28",
+          "psi": 0.3025046042252326,
+          "ks_statistic": 0.17725335589570407,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V25",
+          "psi": 0.11622254182339238,
+          "ks_statistic": 0.14556171762710135,
+          "ks_pvalue": 0.0,
+          "status": "surveiller"
+        }
+      ],
+      "alert_rate": {
+        "observed_rate": 0.0017124712277101417,
+        "expected_rate": 0.0015331747290510177,
+        "ratio": 1.1169445955909425,
+        "status": "normal"
+      }
+    },
+    {
+      "batch": "Transactions du jour 2",
+      "n": 139490,
+      "n_alert": 4,
+      "n_warning": 2,
+      "top_features": [
+        {
+          "feature": "Time",
+          "psi": 6.103432671844738,
+          "ks_statistic": 0.5070108967016184,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V1",
+          "psi": 0.50217702399751,
+          "ks_statistic": 0.21521981934353063,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V3",
+          "psi": 0.32728146965807414,
+          "ks_statistic": 0.26325014888825765,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V28",
+          "psi": 0.2867267828169867,
+          "ks_statistic": 0.18363358573099053,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V15",
+          "psi": 0.11199986553697863,
+          "ks_statistic": 0.14128525418962679,
+          "ks_pvalue": 0.0,
+          "status": "surveiller"
+        }
+      ],
+      "alert_rate": {
+        "observed_rate": 0.001197218438597749,
+        "expected_rate": 0.0015331747290510177,
+        "ratio": 0.7808754057267732,
+        "status": "normal"
+      }
+    },
+    {
+      "batch": "Simulation : Amount × 3",
+      "n": 56746,
+      "n_alert": 1,
+      "n_warning": 0,
+      "top_features": [
+        {
+          "feature": "Amount",
+          "psi": 0.4058203512283519,
+          "ks_statistic": 0.2316263307572019,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V25",
+          "psi": 0.0005028740869652927,
+          "ks_statistic": 0.004424897077560552,
+          "ks_pvalue": 0.37415394163251825,
+          "status": "stable"
+        },
+        {
+          "feature": "V23",
+          "psi": 0.0004890401307835447,
+          "ks_statistic": 0.006988309176573698,
+          "ks_pvalue": 0.031166820908616666,
+          "status": "stable"
+        },
+        {
+          "feature": "V3",
+          "psi": 0.0003714446241826871,
+          "ks_statistic": 0.0042023841954151875,
+          "ks_pvalue": 0.4387595233793118,
+          "status": "stable"
+        },
+        {
+          "feature": "V12",
+          "psi": 0.0003568562001373519,
+          "ks_statistic": 0.004245093550157425,
+          "ks_pvalue": 0.42589101917719074,
+          "status": "stable"
+        }
+      ],
+      "alert_rate": {
+        "observed_rate": 0.0014097909984844747,
+        "expected_rate": 0.0015331747290510177,
+        "ratio": 0.9195240253908221,
+        "status": "normal"
+      }
+    },
+    {
+      "batch": "Simulation : V1–V5 × 1,5",
+      "n": 56746,
+      "n_alert": 4,
+      "n_warning": 1,
+      "top_features": [
+        {
+          "feature": "V1",
+          "psi": 0.477033264455714,
+          "ks_statistic": 0.20957714436580832,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V3",
+          "psi": 0.24280283975240483,
+          "ks_statistic": 0.1261921397617778,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V4",
+          "psi": 0.21042776146615894,
+          "ks_statistic": 0.09908636996851763,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V2",
+          "psi": 0.20828699029147996,
+          "ks_statistic": 0.12525195539532175,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V5",
+          "psi": 0.1573211577101412,
+          "ks_statistic": 0.09954115137306213,
+          "ks_pvalue": 0.0,
+          "status": "surveiller"
+        }
+      ],
+      "alert_rate": {
+        "observed_rate": 0.0015331477108518662,
+        "expected_rate": 0.0015331747290510177,
+        "ratio": 0.999982377612519,
+        "status": "normal"
+      }
+    },
+    {
+      "batch": "Simulation : Amount × 10",
+      "n": 56746,
+      "n_alert": 1,
+      "n_warning": 0,
+      "top_features": [
+        {
+          "feature": "Amount",
+          "psi": 1.5986317695965286,
+          "ks_statistic": 0.47194707410972264,
+          "ks_pvalue": 0.0,
+          "status": "alerte"
+        },
+        {
+          "feature": "V25",
+          "psi": 0.0005028740869652927,
+          "ks_statistic": 0.004424897077560552,
+          "ks_pvalue": 0.37415394163251825,
+          "status": "stable"
+        },
+        {
+          "feature": "V23",
+          "psi": 0.0004890401307835447,
+          "ks_statistic": 0.006988309176573698,
+          "ks_pvalue": 0.031166820908616666,
+          "status": "stable"
+        },
+        {
+          "feature": "V3",
+          "psi": 0.0003714446241826871,
+          "ks_statistic": 0.0042023841954151875,
+          "ks_pvalue": 0.4387595233793118,
+          "status": "stable"
+        },
+        {
+          "feature": "V12",
+          "psi": 0.0003568562001373519,
+          "ks_statistic": 0.004245093550157425,
+          "ks_pvalue": 0.42589101917719074,
+          "status": "stable"
+        }
+      ],
+      "alert_rate": {
+        "observed_rate": 0.0014097909984844747,
+        "expected_rate": 0.0015331747290510177,
+        "ratio": 0.9195240253908221,
+        "status": "normal"
+      }
+    }
+  ]
+}

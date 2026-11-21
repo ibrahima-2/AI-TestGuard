@@ -1,0 +1,11 @@
+numpy==2.5.5
+pandas==3.1.1
+scikit-learn==1.9.1
+scipy==1.18.1
+joblib==1.6.0
+matplotlib==3.11.2
+psutil==7.2.2
+pytest==9.2.0
+pytest-cov==7.1.0
+hypothesis==6.170.17
+ruff==0.17.6

@@ -1,0 +1,95 @@
+{
+  "protocol": {
+    "environment": {
+      "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+      "machine": "arm64",
+      "processor": "arm",
+      "cpu_count_logical": 12,
+      "cpu_count_physical": 12,
+      "total_memory_gb": 24.0,
+      "python": "3.13.5"
+    },
+    "latency_repeats": 1000,
+    "warmup": 50,
+    "latency_scope": "predict_fraud sur 1 transaction : validation du schéma + prétraitement + modèle + seuil",
+    "model_latency_scope": "model.predict_proba sur 1 transaction (sans validation)",
+    "throughput_scope": "predict_fraud sur des lots de taille croissante, médiane de plusieurs passes",
+    "timer": "time.perf_counter",
+    "api": "aucune API HTTP déployée : la latence HTTP (sérialisation, réseau) n'est pas mesurée"
+  },
+  "latency_single": {
+    "n": 1000,
+    "mean_ms": 1.2654015849693678,
+    "p50_ms": 1.2481254962040111,
+    "p95_ms": 1.4275148954766337,
+    "p99_ms": 1.6595204232726244,
+    "max_ms": 2.1707080013584346
+  },
+  "latency_model_only": {
+    "n": 1000,
+    "mean_ms": 0.8091738369112136,
+    "p50_ms": 0.7999375011422671,
+    "p95_ms": 0.903243743960047,
+    "p99_ms": 1.0078883355890866,
+    "max_ms": 2.7323329995851964
+  },
+  "throughput": [
+    {
+      "batch_size": 100,
+      "median_s": 0.0012809999898308888,
+      "throughput_tps": 78064.01310994662
+    },
+    {
+      "batch_size": 1000,
+      "median_s": 0.0013292910007294267,
+      "throughput_tps": 752280.7266815666
+    },
+    {
+      "batch_size": 10000,
+      "median_s": 0.0021424169972306117,
+      "throughput_tps": 4667625.402956786
+    },
+    {
+      "batch_size": 56746,
+      "median_s": 0.005132500009494834,
+      "throughput_tps": 11056210.40331673
+    }
+  ],
+  "memory": {
+    "batch_size": 56746,
+    "rss_before_mb": 884.328125,
+    "rss_after_mb": 884.453125,
+    "tracemalloc_peak_mb": 26.01205539703369,
+    "memory_increase_mb": 26.01205539703369
+  },
+  "model_size_mb": 0.0045566558837890625,
+  "acceptance": {
+    "accepted": true,
+    "criteria": {
+      "latency_p95_ms": {
+        "value": 1.4275148954766337,
+        "operator": "<=",
+        "threshold": 50.0,
+        "passed": true
+      },
+      "throughput_tps": {
+        "value": 11056210.40331673,
+        "operator": ">=",
+        "threshold": 1000.0,
+        "passed": true
+      },
+      "model_size_mb": {
+        "value": 0.0045566558837890625,
+        "operator": "<=",
+        "threshold": 10.0,
+        "passed": true
+      },
+      "memory_increase_mb": {
+        "value": 26.01205539703369,
+        "operator": "<=",
+        "threshold": 200.0,
+        "passed": true
+      }
+    }
+  }
+}

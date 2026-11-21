@@ -1,0 +1,115 @@
+name: tests
+
+# Tests rapides : à chaque push sur main et à chaque Pull Request.
+# Évaluation complète (jeu Kaggle, entraînement, robustesse, performance) :
+# déclenchement manuel ou hebdomadaire, car plus coûteuse.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 1" # chaque lundi à 03:00 UTC
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.13"
+
+jobs:
+  quality:
+    name: Lint + tests rapides + couverture
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Ruff — règles de style et de qualité
+        run: ruff check --output-format=github .
+
+      - name: Ruff — formatage
+        run: ruff format --check .
+
+      - name: Pytest (hors tests lents) avec couverture
+        run: >
+          pytest -m "not slow"
+          --cov=app --cov-report=term-missing --cov-report=xml --cov-fail-under=90
+          --junitxml=test-results/junit.xml
+
+      - name: Résumé dans l'interface GitHub
+        if: always()
+        run: |
+          python - <<'EOF' >> "$GITHUB_STEP_SUMMARY"
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          junit = Path("test-results/junit.xml")
+          if junit.exists():
+              s = ET.parse(junit).getroot().find("testsuite")
+              print(f"### Tests : {s.get('tests')} exécutés, {s.get('failures')} échecs, "
+                    f"{s.get('errors')} erreurs, {s.get('skipped')} ignorés")
+          cov = Path("coverage.xml")
+          if cov.exists():
+              rate = float(ET.parse(cov).getroot().get("line-rate")) * 100
+              print(f"### Couverture des lignes : {rate:.1f} %")
+          EOF
+
+      - name: Conserver les rapports de tests
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapports-tests
+          path: |
+            test-results/junit.xml
+            coverage.xml
+          if-no-files-found: ignore
+
+  full-evaluation:
+    name: Évaluation complète (jeu Kaggle)
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Télécharger et vérifier le jeu de données
+        run: |
+          curl -fsSL --retry 3 -o data/creditcard.csv \
+            https://storage.googleapis.com/download.tensorflow.org/data/creditcard.csv
+          echo "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89  data/creditcard.csv" | sha256sum --check
+
+      - name: Tests lents (jeu complet, non-régression)
+        run: pytest -m slow -v
+
+      - name: Chaîne complète d'évaluation
+        run: python -m app.cli all --output ci-reports --models-dir ci-models
+
+      - name: Conserver les résultats
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evaluation-complete
+          path: |
+            ci-reports/
+            ci-models/*.json
