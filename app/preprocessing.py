@@ -166,7 +166,7 @@ def build_preprocessor(features: list[str] | None = None) -> ColumnTransformer:
     if "Amount" in features:
         amount_pipeline = Pipeline(
             [
-                ("log1p", FunctionTransformer(np.log1p, feature_names_out="one-to-one")),
+                ("log1p", FunctionTransformer(np.log, feature_names_out="one-to-one")),
                 ("scale", StandardScaler()),
             ]
         )
